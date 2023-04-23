@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+skin rose
+
+Entity Biblioteca{
+Socios
+Libros
+}
+
+Entity Socio{
+Nombre
+Número de Socio
+Contraseña
+Libros Prestados
+}
+
+Entity Sistema{
+Prestamo de Libro
+Editar Información
+Calificar Libro
+}
+
+Entity Libro{
+Titulo
+Autor
+Categoría
+ISBN
+}
+
+
+
+
+Biblioteca "1" --"1..*" Socio: Tiene >
+Biblioteca "1" --"1" Sistema: Posee >
+Socio "1..*"--"1" Sistema: Ingresa a >
+Sistema "1"-- "0..*" Libro: Solicita >
+Libro "0..*"--"1" Socio: Se le presta >
+Libro "0..*"--"1" Biblioteca: Le pertenece >
+@enduml

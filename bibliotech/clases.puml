@@ -1,0 +1,74 @@
+@startuml
+skin rose
+
+Class Libro{
+-isbn
+-titulo
+-autor
+-categoría
+-calificación
++Libro()
++getIsbn()
++getTitulo()
++getAutor()
++getCategoria()
++getCalificacion()
+}
+
+Class Sistema{
+-GSON
+-socios
+-libros
+-socio
++Sistema()
++iniciarSession()
++cerrarSession()
++realizarPrestamoLibro()
++obtegerCatalogoLibros()
+-buscarLibro()
+-cargarInformacion()
+-guardarInformacion()
++obtenerDatosSocioLogeado()
+}
+
+Class Utils{
+-EMAIL_PATTERN
+-Utils()
++T[]
++validarEmail()
+}
+
+Class Socio{
+-NUMERO_LIBROS_MAXIMO
+-nombre
+-apellido
+-correoElectronico
+-numeroDeSocio
+-contrasenia
+-librosEnPrestamo
++Socio()
++getNombre()
++getApellido()
++getNombreCompleto()
++getCorreoElectronico()
++getNumeroDeSocio()
++getContrasenia()
++agregarLibro()
+
+}
+
+Class Main{
++main()
+-iniciarSesion()
+-menuPrincipal()
+-menuPrestamo()
+-editarInformacion()
+-cambiarContrasenia()
+-cambiarCorreo()
+}
+
+Main -- Libro: >
+Main -- Sistema: >
+Main -- Utils: >
+Main -- Socio: >
+@enduml
